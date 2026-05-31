@@ -2,36 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- user-scalable=yes দিয়ে জুম করার অনুমতি দেওয়া হয়েছে -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Verification</title>
     <style>
-        body { 
-            margin: 0; 
-            padding: 0; 
-            background-color: #f0f2f5; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* ডানে-বামে বা ওপর-নিচে পেজ টেনে স্ক্রল করা পুরোপুরি বন্ধ করবে */
+            overflow: hidden; 
+            overscroll-behavior: none; 
+            touch-action: pinch-zoom; /* শুধুমাত্র জুম করার টাচ অ্যাকশন চালু রাখবে */
         }
-        .container { 
-            max-width: 100%; 
-            width: 450px; 
-            padding: 20px; 
-            box-sizing: border-box; 
+
+        .container {
+            width: 100%;
+            max-width: 450px; /* কার্ডের স্ট্যান্ডার্ড সাইজ */
+            padding: 15px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        img { 
-            width: 100%; 
-            height: auto; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            /* ছবি লং-প্রেস করে টেনে নিয়ে যাওয়া (Drag) বন্ধ করবে */
+            -webkit-user-drag: none;
+            user-select: none;
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <!-- এখানে আপনার বর্তমান ছবির নাম দিয়ে দেওয়া হয়েছে -->
+        <!-- আপনার গিটহাবে থাকা ছবির নাম -->
         <img src="20260531_174216.png" alt="Card">
     </div>
+
 </body>
 </html>
